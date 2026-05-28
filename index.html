@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FORMA.ARCHIV — Operationelle Ästhetik 1963–1974</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&family=IBM+Plex+Sans:wght@300;400;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1A1A1A;
+  --ink-deep:#0A0A0A;
+  --paper:#F0EDE6;
+  --paper-dark:#E2DDD5;
+  --rule:#2D2D2D;
+  --muted:#6B6B6B;
+  --accent:#C4A86B;
+  --steel:#4A6B8A;
+  --sans:'IBM Plex Sans',Helvetica,Arial,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  --serif:'IBM Plex Serif',Georgia,serif;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:13px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* ══════════════════════════════════════
+   MASTHEAD
+══════════════════════════════════════ */
+.masthead{border-bottom:3px solid var(--ink-deep);background:var(--paper)}
+.mh-top{display:flex;justify-content:space-between;align-items:flex-end;padding:20px 40px 8px;border-bottom:1px solid var(--ink)}
+.mh-vol{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.mh-date{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--muted)}
+.mh-title-row{padding:10px 40px 0;display:flex;align-items:baseline;gap:20px}
+.site-title{font-size:44px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--ink-deep);text-transform:uppercase}
+.site-sub{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+nav{padding:0 40px;display:flex;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--ink-deep);overflow-x:auto}
+nav a{color:#aaa;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:9px 18px 9px 0;margin-right:18px;font-weight:400;border-right:1px solid #2a2a2a;cursor:pointer;transition:color .15s;white-space:nowrap}
+nav a:last-child{border-right:none}
+nav a:hover,nav a.act{color:var(--accent)}
+
+/* ══════════════════════════════════════
+   PAGE WRAPPER
+══════════════════════════════════════ */
+.page{max-width:960px;margin:0 auto}
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero{display:grid;grid-template-columns:220px 1px 1fr;border-bottom:2px solid var(--ink);min-height:300px}
+.hero-idx{padding:28px 20px 28px 40px;border-right:1px solid var(--ink);display:flex;flex-direction:column;justify-content:space-between}
+.idx-head{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.idx-item{border-bottom:1px solid var(--paper-dark);padding:9px 0;cursor:pointer}
+.idx-item:last-child{border-bottom:none}
+.idx-n{font-family:var(--mono);font-size:8px;color:var(--muted);display:block;margin-bottom:1px}
+.idx-t{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-deep)}
+.hero-div{background:var(--ink)}
+.hero-feat{padding:40px 44px 48px;display:flex;flex-direction:column;justify-content:flex-start;background:var(--ink-deep);position:relative;overflow:hidden}
+.hero-bg{position:absolute;top:-15px;right:-8px;font-size:200px;font-weight:700;color:#111;line-height:1;letter-spacing:-.05em;pointer-events:none;user-select:none}
+.hero-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;position:relative}
+.hero-h{font-size:11px;font-weight:700;font-family:var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);position:relative;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid #2a2a2a}
+/* MANIFESTA TEKSTS — IBM Plex Serif, editoriālais segments */
+.hero-manifesto{position:relative;columns:2;column-gap:40px}
+.hero-manifesto p{font-family:var(--serif);font-size:13px;font-weight:300;color:#C8C8C8;line-height:1.8;margin-bottom:16px;break-inside:avoid}
+.hero-manifesto p.lead{font-family:var(--serif);font-size:15px;font-weight:300;color:#E8E8E8;line-height:1.75;margin-bottom:20px;font-style:italic;column-span:all}
+.hero-manifesto strong{font-weight:400;color:#E8E8E8;font-style:normal}
+.hero-manifesto em{font-style:italic;color:#9A9A9A}
+.hero-manifesto .m-rule{column-span:all;border-top:1px solid #2a2a2a;margin:20px 0}
+.hero-manifesto .m-key{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.hero-manifesto .m-stmt{font-family:var(--serif);font-size:17px;font-weight:300;color:#E8E8E8;line-height:1.6;column-span:all;margin-bottom:20px;padding-left:16px;border-left:2px solid var(--accent)}
+.hero-manifesto .m-final{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:#4A4A4A;column-span:all;margin-top:24px;padding-top:16px;border-top:1px solid #1e1e1e}
+
+/* ══════════════════════════════════════
+   SECTIONS
+══════════════════════════════════════ */
+.section{padding:36px 40px;border-bottom:1px solid var(--ink)}
+.sec-hdr{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink-deep);padding-bottom:7px;margin-bottom:24px}
+.sec-t{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-deep)}
+.sec-n{font-family:var(--mono);font-size:9px;color:var(--muted)}
+.sec-intro{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7;max-width:600px;border-left:2px solid var(--accent);padding-left:14px}
+
+/* ══════════════════════════════════════
+   § 01 — LAIKA LĪNIJA
+══════════════════════════════════════ */
+.timeline{position:relative;padding-left:0}
+.tl-spine{position:absolute;left:80px;top:0;bottom:0;width:1px;background:var(--rule)}
+.tl-items{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:80px 40px 1fr;align-items:flex-start;border-bottom:1px solid var(--paper-dark);padding:16px 0;cursor:pointer;transition:background .15s}
+.tl-item:hover{background:rgba(0,0,0,.02)}
+.tl-item:last-child{border-bottom:none}
+.tl-year{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);padding-right:12px;text-align:right;padding-top:2px}
+.tl-dot{width:8px;height:8px;border:1px solid var(--ink);background:var(--paper);border-radius:50%;margin-top:5px;margin-left:16px;flex-shrink:0}
+.tl-item:hover .tl-dot{background:var(--accent);border-color:var(--accent)}
+.tl-body{padding-left:16px}
+.tl-cat{font-family:var(--mono);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);margin-bottom:3px}
+.tl-title{font-size:13px;font-weight:700;color:var(--ink-deep);margin-bottom:3px}
+.tl-desc{font-size:11px;color:var(--ink);line-height:1.55}
+
+/* ══════════════════════════════════════
+   § 02 — CINEMA (ar attēliem)
+   Lai nomainītu attēlu: mainiet src="" vērtību
+   Ieteicamais attēla izmērs: 640×480px vai 4:3 proporcija
+══════════════════════════════════════ */
+.film-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.film-card{background:var(--paper);cursor:pointer;transition:background .2s;overflow:hidden}
+.film-card:hover{background:var(--ink-deep)}
+.film-card:hover .film-info,.film-card:hover .film-dir{color:#666}
+.film-card:hover .film-title{color:var(--paper)}
+/* ATTĒLU STILS — mainiet filter vērtību pēc vēlmes:
+   grayscale(100%) = pilnīgi melnbalts
+   grayscale(50%)  = daļēji krāsains
+   contrast(1.3)   = spēcīgāks kontrasts */
+/* .film-img removed */
+.film-body{padding:16px;border-top:1px solid var(--paper-dark)}
+.film-year{font-family:var(--mono);font-size:9px;color:var(--accent);letter-spacing:.15em;display:block;margin-bottom:4px}
+.film-title{font-size:14px;font-weight:700;letter-spacing:-.01em;color:var(--ink-deep);line-height:1.2;margin-bottom:3px;transition:color .2s}
+.film-dir{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;transition:color .2s}
+.film-info{font-size:10px;color:var(--ink);line-height:1.55;transition:color .2s}
+.film-tag{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);border:1px solid var(--steel);padding:2px 5px}
+
+/* ══════════════════════════════════════
+   § 03 — FOTOGRĀFIJA GALERIJA
+   Lai pievienotu jaunu foto: kopējiet .gal-item bloku
+   .gal-wide = platais variants (aizņem 2 kolonnas)
+══════════════════════════════════════ */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.gal-item{overflow:hidden;position:relative;cursor:pointer;background:var(--paper);border:1px solid var(--paper-dark);padding:16px}
+.gal-item{min-height:60px}
+
+.gal-cap{padding:0}
+
+.gal-name{font-size:12px;font-weight:700;color:var(--ink-deep);display:block;margin-bottom:2px}
+.gal-meta{font-family:var(--mono);font-size:9px;color:var(--accent);letter-spacing:.12em}
+.gal-wide{grid-column:span 2}
+
+
+/* ══════════════════════════════════════
+   § 04 — MODE
+   Attēlu proporcija: 2/3 (portreta orientācija)
+══════════════════════════════════════ */
+.fashion-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.fash-item{background:var(--paper);cursor:pointer;overflow:hidden}
+.fash-item:hover .fash-img{filter:grayscale(40%) contrast(1.1)}
+/* .fash-img removed */
+.fash-body{padding:16px;border-top:1px solid var(--paper-dark)}
+.fash-era{font-family:var(--mono);font-size:8px;color:var(--steel);letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:4px}
+.fash-title{font-size:13px;font-weight:700;color:var(--ink-deep);margin-bottom:3px}
+.fash-by{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.fash-note{font-size:10px;color:var(--ink);line-height:1.55}
+
+/* ══════════════════════════════════════
+   § 05 — STILA IKONAS
+   Attēlu proporcija: 3/4 (portrets)
+   4 kolonnas — ja vēlas 8 ikonas, pievienojiet vēl 4 .ic-cell blokus
+══════════════════════════════════════ */
+.icons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.ic-cell{background:var(--paper);cursor:pointer;overflow:hidden;transition:background .2s}
+.ic-cell:hover{background:var(--ink-deep)}
+.ic-cell:hover .ic-name{color:var(--paper)}
+.ic-cell:hover .ic-note,.ic-cell:hover .ic-role{color:#666}
+/* .ic-img removed */
+.ic-body{padding:16px}
+.ic-name{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-deep);margin-bottom:2px;transition:color .2s}
+.ic-role{font-family:var(--mono);font-size:8px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:5px;transition:color .2s}
+.ic-note{font-size:9px;color:var(--muted);line-height:1.5;transition:color .2s}
+
+/* ══════════════════════════════════════
+   § 06 — MEISTARI
+   Attēlu izmērs: 80×auto (portrets, fiksēts platums)
+══════════════════════════════════════ */
+.des-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.des-item{display:block;border-bottom:1px solid var(--paper-dark);border-right:1px solid var(--paper-dark);cursor:pointer;transition:background .15s;overflow:hidden}
+.des-item:nth-child(2n){border-right:none}
+.des-item:nth-last-child(-n+2){border-bottom:none}
+.des-item:hover{background:var(--paper-dark)}
+/* .des-photo removed */
+.des-body{padding:16px}
+.des-name{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-deep);margin-bottom:2px}
+.des-field{font-size:9px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;font-family:var(--mono)}
+.des-note{font-size:10px;color:var(--ink);line-height:1.5}
+
+/* ══════════════════════════════════════
+   § 07 — OBJEKTI
+   Attēlu proporcija: 4/3 (ainava)
+══════════════════════════════════════ */
+.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.obj-item{background:var(--paper);cursor:pointer;overflow:hidden;transition:background .15s}
+.obj-item:hover{background:var(--paper-dark)}
+/* .obj-img removed */
+.obj-item:hover .obj-img{filter:grayscale(30%) contrast(1.05)}
+.obj-body{padding:16px;border-top:1px solid var(--paper-dark)}
+.obj-cat{font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);margin-bottom:5px;display:block}
+.obj-name{font-size:13px;font-weight:700;color:var(--ink-deep);margin-bottom:2px}
+.obj-year{font-family:var(--mono);font-size:9px;color:var(--muted);margin-bottom:7px}
+.obj-desc{font-size:10px;color:var(--ink);line-height:1.6}
+
+/* ══════════════════════════════════════
+   § 08 — ARHITEKTŪRA
+   Attēlu proporcija: 16/9 (ainava)
+══════════════════════════════════════ */
+.arch-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.arch-item{background:var(--paper);cursor:pointer;overflow:hidden}
+.arch-item:hover .arch-img{filter:grayscale(30%) contrast(1.05)}
+/* .arch-img removed */
+.arch-body{padding:20px}
+.arch-loc{font-family:var(--mono);font-size:9px;color:var(--steel);letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px}
+.arch-name{font-size:15px;font-weight:700;color:var(--ink-deep);margin-bottom:2px;letter-spacing:-.01em}
+.arch-by{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.arch-note{font-size:11px;color:var(--ink);line-height:1.6}
+
+/* ══════════════════════════════════════
+   MANIFESTO BANDA
+══════════════════════════════════════ */
+.manifesto{background:var(--ink-deep);color:var(--paper);padding:44px 40px;display:grid;grid-template-columns:1fr 2fr;gap:40px}
+.mf-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.mf-title{font-size:26px;font-weight:700;line-height:1.15;letter-spacing:-.02em}
+.mf-rules{display:flex;flex-direction:column;gap:0;justify-content:center}
+.rule-line{display:grid;grid-template-columns:22px 1fr;gap:12px;border-bottom:1px solid #222;padding:10px 0;align-items:baseline}
+.rule-line:last-child{border-bottom:none;padding-bottom:0}
+.rule-n{font-family:var(--mono);font-size:9px;color:var(--accent)}
+.rule-t{font-size:11px;color:#C8C8C8;line-height:1.5}
+
+/* ══════════════════════════════════════
+   ATSAUCES TABULA
+══════════════════════════════════════ */
+.ref-table{width:100%;border-collapse:collapse}
+.ref-table tr{border-bottom:1px solid var(--paper-dark);cursor:pointer;transition:background .1s}
+.ref-table tr:hover{background:var(--paper-dark)}
+.ref-table tr:last-child{border-bottom:none}
+.ref-table td{padding:10px 8px;font-size:11px;vertical-align:top}
+.ref-table td:first-child{font-family:var(--mono);font-size:9px;color:var(--muted);width:80px;padding-top:12px}
+.ref-title{font-weight:700;color:var(--ink-deep);display:block;margin-bottom:2px;font-size:12px}
+.ref-meta{color:var(--muted);font-size:10px}
+.ref-link{font-family:var(--mono);font-size:8px;color:var(--steel);text-decoration:underline;letter-spacing:.08em}
+.ref-link:hover{color:var(--accent)}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.footer{background:var(--ink-deep);padding:20px 40px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid #222}
+.footer-sig{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:#444;text-transform:uppercase}
+.footer-rule{font-family:var(--mono);font-size:9px;color:var(--accent);letter-spacing:.15em}
+
+/* ══════════════════════════════════════
+   REZERVES BLOKS (kad attēls neielādējas)
+   Automātiski parādās ja src ir nepareizs
+══════════════════════════════════════ */
+img.film-img[src=""],
+img.film-img:not([src]),
+img.fash-img[src=""],
+img.obj-img[src=""],
+img.arch-img[src=""],
+img.ic-img[src=""],
+img.des-photo[src=""],
+img.gal-item img[src=""] {
+  background: var(--rule);
+  display: block;
+}
+</style>
+</head>
+<body>
+<div class="page">
+<!-- ══════════════════════════════════════
+     MASTHEAD
+     Rediģēt: Vol. numuru, datumu, apakšvirsrakstu
+══════════════════════════════════════ -->
+<header class="masthead">
+<div class="mh-top">
+<div class="mh-vol">Vol. I  ·  Archiv der Operativen Ästhetik</div>
+<div class="mh-date">Paris · Milano · New York  ·  1963–1974</div>
+</div>
+<div class="mh-title-row">
+<div>
+<div class="site-title">FORMA.ARCHIV</div>
+<div class="site-sub" style="margin-top:4px;margin-bottom:12px">Operationelle Ästhetik · Kalkulierter Funktionalismus · Neo-Noir Europa</div>
+</div>
+</div>
+<nav>
+<a class="act" href="#">Hronos</a>
+<a href="#">Cinema</a>
+<a href="#">Fotogrāfija</a>
+<a href="#">Mode</a>
+<a href="#">Ikonas</a>
+<a href="#">Objekti</a>
+<a href="#">Arhitektūra</a>
+<a href="#">Atsauces</a>
+</nav>
+</header>
+<!-- ══════════════════════════════════════
+     HERO SEKCIJA
+══════════════════════════════════════ -->
+<div class="hero">
+<div class="hero-idx">
+<div class="idx-head">Satura rādītājs</div>
+<div>
+<div class="idx-item"><span class="idx-n">§ 01</span><div class="idx-t">Laika Līnija</div></div>
+<div class="idx-item"><span class="idx-n">§ 02</span><div class="idx-t">Cinema Noir</div></div>
+<div class="idx-item"><span class="idx-n">§ 03</span><div class="idx-t">Fotogrāfija</div></div>
+<div class="idx-item"><span class="idx-n">§ 04</span><div class="idx-t">Mode</div></div>
+<div class="idx-item"><span class="idx-n">§ 05</span><div class="idx-t">Stila Ikonas</div></div>
+<div class="idx-item"><span class="idx-n">§ 06</span><div class="idx-t">Meistari</div></div>
+<div class="idx-item"><span class="idx-n">§ 07</span><div class="idx-t">Objekti</div></div>
+<div class="idx-item"><span class="idx-n">§ 08</span><div class="idx-t">Arhitektūra</div></div>
+</div>
+</div>
+<div style="width:1px;background:var(--ink)"></div>
+<div class="hero-feat">
+<div class="hero-bg">68</div>
+<div class="hero-lbl">▸ Manifests · Jean-Pierre Melville · Melvila Kodekss</div>
+<div class="hero-h">Forma pakļaujas funkcijai. Viss pārējais — troksnis.</div>
+<div class="hero-manifesto">
+<p class="lead">Žana Pjēra Melvila kino ērā Alens Delons radīja tēlu, kas operē ārpus morāles un emocijām. Ne nonchalance — patiess, tīrs tukšums. <em>Amor fati</em> — bez nožēlas, bez eiforijas. Emocijas ir mainīgais, kas rada kļūdas un iznīcina sistēmas.</p>
+<p><em>"Le Cercle Rouge"</em> laupīšanas aina ilgst vairāk nekā 25 minūtes bez neviena vārda. Katra kustība kalpo funkcionālam mērķim. Tukša runāšana ir izslēgta. Operatori sadarbojas, jo to prasa mērķa mērogs — taču katrs saglabā absolūtu iekšējo izolāciju.</p>
+<p>Melville bija apsēsts ar samuraju kultūru — ne romantizētajā formā, bet tās kodolā: pilnīga pienākuma izpilde bez emocionāla trokšņa. Bushido ētikas un stoiķu filozofijas krustpunktā ir identisks secinājums: viss liekvārdīgais ir vājums. Darbība bez komentāra. Forma bez dekorācijas. <strong>Tā ir ētiska pozīcija.</strong></p>
+<p>Sartra un Kamī Francija bija Melvila intelektuālais ūdens. Eksistenciālisma centrālais jautājums — ko nozīmē rīkoties pasaulē bez garantētās nozīmes — izkristalizējas viņa personāžos. Ir aina <em>Le Cercle Rouge</em>, kas nesatur dialogu. Divi vīri sagatavo laupīšanu. Mēs redzam rokas, instrumentus, griestus, grīdu. Neviena seja pilnā gaismā. Neviena emocionāla ekspozīcija.</p>
+<p>Skatītājs nesaņem norādes par to, kā justies.</p>
+<div class="m-stmt">
+<span class="m-key">Melvila morālais paraksts</span>
+        Telpa atsakās tiesāt.
+      </div>
+<p>Parastais stāstījums izmanto telpu kā morāles signālu. Ļauna vieta — tumša, šaura, netīra. Laba vieta — gaiša, plaša, silta. Melville šo kodu atceļ. Viņa noziedznieki dzīvo kārtīgos, asketiskos dzīvokļos. Viņa policisti strādā drūmās biroja telpās. Vizuālā vide nedod morālu novērtējumu par cilvēku, kurš tajā atrodas.</p>
+<p><strong>Telpa ir neitrāla sistēma. Morāle ir cilvēka projekcija uz telpu, nevis telpas īpašums.</strong> Kad tu noņem vizuālos morāles signālus, skatītājs paliek viens ar savu spriedumu — bez atbalsta, bez vadlīnijām. Jo lielākā daļa morāles ikdienā nav pārliecība — tā ir imitācija apkārtējo reakcijās.</p>
+<div class="m-rule"></div>
+<p>Jef Costello <em>Le Samouraï</em> ieiet istabā. Nogalina vīru. Iziet. Nav muzikāla sasprindzinājuma pirms. Nav emocionāla atslābuma pēc. Kamera fiksē darbību ar tādu pašu distanci, ar kādu tā fiksētu cilvēku, kurš ielej kafiju.</p>
+<p>Vai darbības morālā kvalitāte pieder darbībai pašai — vai mūsu interpretācijai par to? Ja slepkavība tiek filmēta bez sprieduma, vai tā kļūst morāli neitrāla? Nē. Tā kļūst <strong>morāli nesegta</strong> — un tieši tad skatītājs saprot, ka segumu vienmēr nodrošināja stāstījuma konvencija, nevis pati darbība. Melville atņem šo segumu. Tas, kas paliek, ir tīrā darbība un tīrais diskomforts.</p>
+<p>Costello un <em>Le Cercle Rouge</em> personāži darbojas pēc koda — profesionāla, gandrīz rituāla uzvedības sistēmas. Šis kods nesatur kategoriju "labs" vai "ļauns". Tas satur tikai: <strong>pareizi izpildīts vai nav izpildīts.</strong> Bushido nav ētika — tā ir tehnika. Tā neinteresējas par to, vai darbība ir morāli pamatota. Tā interesējas par to, vai darbība tiek veikta ar pilnu apņemšanos un precizitāti.</p>
+<div class="m-stmt">
+<span class="m-key">Melvila filozofiskā provokācija</span>
+        Ja cilvēks rīkojas perfekti saskaņā ar savu kodu, bet šis kods ir ārpus sabiedriskās morāles sistēmas — ko mēs tiesājam? Personāžu vai normu, ko viņš nepārkāpj?
+      </div>
+<p>Atbilde, ko Melville sniedz ar telpu un kadru — atsakoties iesaistīties emocionālajā spriedumā — ir: <strong>jūs tiesājat sevi.</strong> Savu nepieciešamību pēc morālas kārtības, kuras garantijas neeksistē.</p>
+<div class="m-final">FORMA.ARCHIV · Manifests · 1963–1974 · Eiropas Neo-Noir · Kalkulētais Funkcionālisms</div>
+</div>
+</div>
+</div>
+<!-- ══════════════════════════════════════
+     § 01 — LAIKA LĪNIJA
+     Lai pievienotu notikumu: kopējiet .tl-item bloku
+     Mainiet: gadu (.tl-year), kategoriju (.tl-cat),
+     nosaukumu (.tl-title), aprakstu (.tl-desc)
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ 01 — Laika Līnija</span>
+<span class="sec-n">1963–1974 · Hronoloģiskais Katalogs</span>
+</div>
+<div class="sec-intro">Viena dekāde. Eiropa pārdefinē formas valodu. Katrs notikums ir sistēmas mezgls.</div>
+<div class="timeline" style="position:relative">
+<div class="tl-spine"></div>
+<div class="tl-items">
+<div class="tl-item">
+<div class="tl-year">1963</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Objekts</div>
+<div class="tl-title">Braun T 1000 — Dieter Rams</div>
+<div class="tl-desc">Pasaules uztvērējs ar alumīnija korpusu. Katra poga ar vienu funkciju. Rūpnieciskā forma bez dekorācijām.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1963</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Objekts</div>
+<div class="tl-title">Olivetti Lettera 32 — Marcello Nizzoli</div>
+<div class="tl-desc">Portatīvā rakstāmmašīna kā dizaina objekts. Tehnoloģija ietērpta estētiskā formā.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1964</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Dizains</div>
+<div class="tl-title">Brionvega Algol — Zanuso &amp; Sapper</div>
+<div class="tl-desc">Televizors kā skulptūra. Melns kubiskais korpuss kā monolīts. Tehnoloģija apģērbta.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1964</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Arhitektūra</div>
+<div class="tl-title">Barbican Centre — Chamberlin Powell &amp; Bon</div>
+<div class="tl-desc">Londona. Urbāns betona cietoksnis. Telpa kā kontrolēta ekosistēma ar slēgtiem koridoriem.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1966</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Cinema</div>
+<div class="tl-title">Blow-Up — Michelangelo Antonioni</div>
+<div class="tl-desc">Fotogrāfija kā izlūkošanas instruments. Paplašinātais attēls atklāj patiesību, ko acs nefiksē.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1966</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Mode</div>
+<div class="tl-title">Le Smoking — Yves Saint Laurent</div>
+<div class="tl-desc">Sievietes smokings kā varas uniforma. Apģērbs kā statusa kods. Tuxedo silhuets — arhitektoniska precizitāte audumā.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1967</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Cinema</div>
+<div class="tl-title">Le Samouraï — Jean-Pierre Melville</div>
+<div class="tl-desc">Klusuma algoritms. Kostello dzīvoklis kā operacionālā arhitektūra. Kustību ekonomija kā mākslas forma.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1968</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Fotogrāfija</div>
+<div class="tl-title">Provoke Magazine — Moriyama, Nakahira</div>
+<div class="tl-desc">Tokija. Are, bure, bokeh. Attēls kā slēptās kameras dati. Antiestētika kā estētika.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1969</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Pulkstenis</div>
+<div class="tl-title">Heuer Monaco 1133B</div>
+<div class="tl-desc">Pirmais kvadrāta hronogrāfs. McQueen Le Mans rokā. Laiks kā operacionāls parametrs.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1970</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Cinema</div>
+<div class="tl-title">Le Cercle Rouge — Jean-Pierre Melville</div>
+<div class="tl-desc">Heist kā precīzs mehānisms. Žalūziju ēnas kā taktisks telpas dalījums. Komunikācija caur darbību.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1972</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Cinema</div>
+<div class="tl-title">Un Flic — Jean-Pierre Melville</div>
+<div class="tl-desc">Melville pēdējā filma. Desaturētā krāsu palete pirms laika. Urbānā ainava kā pretinieks.</div>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-year">1974</div>
+<div class="tl-dot"></div>
+<div class="tl-body">
+<div class="tl-cat">Dizains</div>
+<div class="tl-title">Rams formulē 10 principus</div>
+<div class="tl-desc">Braun GmbH. "Weniger, aber besser." Desmit labā dizaina principi kā sistēmas kodekss.</div>
+</div>
+</div>
+<!-- JAUNS NOTIKUMS — noņemiet komentāru un aizpildiet:
+      <div class="tl-item">
+        <div class="tl-year">GADS</div>
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-cat">KATEGORIJA</div>
+          <div class="tl-title">NOSAUKUMS</div>
+          <div class="tl-desc">APRAKSTS</div>
+        </div>
+      </div>
+      -->
+</div>
+</div>
+</section>
+<!-- ══════════════════════════════════════
+     § 02 — CINEMA
+     src="" — ielieciet sava attēla URL vai relatīvo ceļu
+     Piemērs lokālam failam: src="images/le-samourai.jpg"
+     Piemērs URL: src="https://example.com/photo.jpg"
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ 02 — Cinema Noir</span>
+<span class="sec-n">Francija · Itālija · 1963–1974</span>
+</div>
+<div class="sec-intro">Melville un Antonioni rada telpu kā darbojošos mehānismu. Kadrs ir informācija, ne ilustrācija.</div>
+<div class="film-grid">
+<div class="film-card">
+<!-- ATTĒLS: aizstājiet src ar savu -->
+
+<div class="film-body">
+<span class="film-year">1967</span>
+<div class="film-title">Le Samouraï</div>
+<div class="film-dir">J.-P. Melville · Alain Delon</div>
+<div class="film-info">Telpas kā operacionālā arhitektūra. Kostello dzīvoklis — kails minimālisms. Putna būris kā dzīvs sensors. Kustību ekonomija kā mākslas forma.</div>
+<span class="film-tag">Funkcija / Izolācija</span>
+</div>
+</div>
+<div class="film-card">
+
+<div class="film-body">
+<span class="film-year">1970</span>
+<div class="film-title">Le Cercle Rouge</div>
+<div class="film-dir">J.-P. Melville · Delon / Montand</div>
+<div class="film-info">Heist kā precīzs mehānisms. Žalūziju ēnas — taktisks sektoru dalījums. Komunikācija caur darbību, ne vārdiem.</div>
+<span class="film-tag">Klusums / Precizitāte</span>
+</div>
+</div>
+<div class="film-card">
+
+<div class="film-body">
+<span class="film-year">1972</span>
+<div class="film-title">Un Flic</div>
+<div class="film-dir">J.-P. Melville · Alain Delon</div>
+<div class="film-info">Melville pēdējā filma. Desaturētā krāsu palete pirms laika. Urbānā ainava kā pretinieks.</div>
+<span class="film-tag">Urbānā Aukstums</span>
+</div>
+</div>
+<div class="film-card">
+
+<div class="film-body">
+<span class="film-year">1966</span>
+<div class="film-title">Blow-Up</div>
+<div class="film-dir">Michelangelo Antonioni</div>
+<div class="film-info">Fotogrāfija kā izlūkošanas instruments. Paplašinātais attēls atklāj patiesību. Londona 60. gadi kā dizaina laboratorija.</div>
+<span class="film-tag">Novērošana / Dati</span>
+</div>
+</div>
+<div class="film-card">
+
+<div class="film-body">
+<span class="film-year">1969</span>
+<div class="film-title">Z</div>
+<div class="film-dir">Costa-Gavras · Yves Montand</div>
+<div class="film-info">Politiskais trileris kā dokumentāls protokols. Sistēma pret indivīdu.</div>
+<span class="film-tag">Sistēma / Kontrole</span>
+</div>
+</div>
+<div class="film-card">
+
+<div class="film-body">
+<span class="film-year">1963</span>
+<div class="film-title">Il Gattopardo</div>
+<div class="film-dir">Luchino Visconti · Burt Lancaster</div>
+<div class="film-info">Vizkonti iestudētā simetrija kā varas izpausme. Kostīmu precizitāte — katrs auduma raksts ir statusa kods.</div>
+<span class="film-tag">Statuss / Hierarhija</span>
+</div>
+</div>
+<!-- JAUNA FILMA — noņemiet komentāru:
+    <div class="film-card">
+      <img class="film-img" src="JUSU_ATTELA_URL" alt="Filmas nosaukums" onerror="this.style.background='#2d2d2d'">
+      <div class="film-body">
+        <span class="film-year">GADS</span>
+        <div class="film-title">NOSAUKUMS</div>
+        <div class="film-dir">REŽISORS · AKTIERIS</div>
+        <div class="film-info">APRAKSTS</div>
+        <span class="film-tag">TAGS</span>
+      </div>
+    </div>
+    -->
+</div>
+</section>
+<!-- ══════════════════════════════════════
+     § 03 — FOTOGRĀFIJA GALERIJA
+     .gal-item = standarta (3/4 proporcija)
+     .gal-item.gal-wide = platais variants (16/9, aizņem 2 kolonnas)
+     Hover efekts: nosaukums parādās no apakšas
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ 03 — Fotogrāfija</span>
+<span class="sec-n">Newton · Moriyama · Novērošanas Estētika</span>
+</div>
+<div class="sec-intro">Attēls kā izlūkošanas dati. Ne romantika — faktu fiksācija. Gaisma kā nopratināšanas instruments.</div>
+<div class="gallery">
+<div class="gal-item">
+
+<div class="gal-cap">
+<span class="gal-name">Helmut Newton</span>
+<span class="gal-meta">Berlin · 1940–2004</span>
+</div>
+</div>
+<div class="gal-item">
+
+<div class="gal-cap">
+<span class="gal-name">Stray Dog, Misawa</span>
+<span class="gal-meta">Daido Moriyama · 1971</span>
+</div>
+</div>
+<div class="gal-item">
+
+<div class="gal-cap">
+<span class="gal-name">New York</span>
+<span class="gal-meta">William Klein · 1955</span>
+</div>
+</div>
+<!-- PLATAIS ATTĒLS (span 2 kolonnas) -->
+<div class="gal-item gal-wide">
+
+<div class="gal-cap">
+<span class="gal-name">Urbānais dokuments</span>
+<span class="gal-meta">Novērošanas estētika · 1970</span>
+</div>
+</div>
+<div class="gal-item">
+
+<div class="gal-cap">
+<span class="gal-name">The Decisive Moment</span>
+<span class="gal-meta">Henri Cartier-Bresson</span>
+</div>
+</div>
+<!-- JAUNS GALERIJAS ATTĒLS:
+    <div class="gal-item">
+      <img src="JUSU_ATTELA_URL" alt="Apraksts" onerror="this.style.background='#1a1a1a'">
+      <div class="gal-cap">
+        <span class="gal-name">NOSAUKUMS</span>
+        <span class="gal-meta">AUTORS · GADS</span>
+      </div>
+    </div>
+    -->
+</div>
+</section>
+<!-- ══════════════════════════════════════
+     § 04 — MODE
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ 04 — Mode</span>
+<span class="sec-n">Operacionālā Uniforma · Apģērbs kā Rīks</span>
+</div>
+<div class="sec-intro">Mode neeksistē. Apģērbs ir statusa kods un anonimitātes sistēma vienlaikus.</div>
+<div class="fashion-layout">
+<div class="fash-item">
+
+<div class="fash-body">
+<span class="fash-era">Paris · 1966</span>
+<div class="fash-title">Le Smoking</div>
+<div class="fash-by">Yves Saint Laurent</div>
+<div class="fash-note">Sievietes smokings kā varas manifestācija. Pirmoreiz Vogue aizliedza publicēt. Tuxedo silhuets — arhitektoniska precizitāte audumā.</div>
+</div>
+</div>
+<div class="fash-item">
+
+<div class="fash-body">
+<span class="fash-era">Paris · 1967</span>
+<div class="fash-title">Trencis / Samouraï</div>
+<div class="fash-by">Aquascutum piegriezums</div>
+<div class="fash-note">Militāras izcelsmes lietusmētelis. Jostas stingri savilktas, apkakle paceltas. Funkcija: anonimitātes saglabāšana. Trencis nojauc ķermeņa kontūras.</div>
+</div>
+</div>
+<div class="fash-item">
+
+<div class="fash-body">
+<span class="fash-era">Hollywood · 1963</span>
+<div class="fash-title">Darba Drēbes kā Estētika</div>
+<div class="fash-by">Steve McQueen</div>
+<div class="fash-note">Chino bikses, vienkāršs T-krekls, ādas jaka. Funkcionāls apģērbs bez teātra. Neko lieku.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════════════════════════════
+     § 05 — STILA IKONAS
+     4 kolonnas, portreta attēli 3/4
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ 05 — Stila Ikonas</span>
+<span class="sec-n">Operacionālā Klātbūtne</span>
+</div>
+<div class="icons-grid">
+<div class="ic-cell">
+
+<div class="ic-body">
+<div class="ic-name">Alain Delon</div>
+<div class="ic-role">Aktieris · Paris</div>
+<div class="ic-note">Trencis + Borsalino = anonimitātes sistēma. Samouraï kodekss.</div>
+</div>
+</div>
+<div class="ic-cell">
+
+<div class="ic-body">
+<div class="ic-name">Steve McQueen</div>
+<div class="ic-role">Aktieris · Hollywood</div>
+<div class="ic-note">Heuer Monaco. Funkcionāls apģērbs. Fiziskā klātbūtne bez teatralitātes.</div>
+</div>
+</div>
+<div class="ic-cell">
+
+<div class="ic-body">
+<div class="ic-name">Jean-Luc Godard</div>
+<div class="ic-role">Režisors · Genève</div>
+<div class="ic-note">Taisnstūra brilles kā intelektuālā rīka kods. Ādas jaka vai uzvalks — bez starpceļa.</div>
+</div>
+</div>
+<div class="ic-cell">
+
+<div class="ic-body">
+<div class="ic-name">Marcello Mastroianni</div>
+<div class="ic-role">Aktieris · Roma</div>
+<div class="ic-note">Itāļu sartoriālā arhitektūra. Uzvalks kā otrā āda. Nonchalance kā kontroles forma.</div>
+</div>
+</div>
+<!-- JAUNA IKONA:
+    <div class="ic-cell">
+      <img class="ic-img" src="JUSU_ATTELA_URL" alt="Vards" onerror="this.style.background='#1a1a1a'">
+      <div class="ic-body">
+        <div class="ic-name">VARDS UZVARDS</div>
+        <div class="ic-role">LOMA · PILSETA</div>
+        <div class="ic-note">APRAKSTS</div>
+      </div>
+    </div>
+    -->
+</div>
+</section>
+<!-- ══════════════════════════════════════
+     § 06 — MEISTARI
+     2 kolonnas, mazs portretfoto kreisajā pusē
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ 06 — Meistari</span>
+<span class="sec-n">Dizains · Fotogrāfija · Arhitektūra</span>
+</div>
+<div class="des-grid">
+<div class="des-item">
+
+<div class="des-body">
+<div class="des-name">Dieter Rams</div>
+<div class="des-field">Braun GmbH · Frankfurt</div>
+<div class="des-note">"Weniger, aber besser." Katra poga ar funkcionālu pamatojumu. Vizuālais troksnis = neveiksme.</div>
+</div>
+</div>
+<div class="des-item">
+
+<div class="des-body">
+<div class="des-name">Helmut Newton</div>
+<div class="des-field">Fotogrāfija · Vogue</div>
+<div class="des-note">Subjekts fiksēts kā objekts. Klīnisks aukstums. Sterilās viesnīcu telpas kā varas arēna.</div>
+</div>
+</div>
+<div class="des-item">
+
+<div class="des-body">
+<div class="des-name">Mies van der Rohe</div>
+<div class="des-field">Arhitektūra · Chicago</div>
+<div class="des-note">"God is in the details." Tērauds un stikls bez dekorācijām. Karkass kā struktūra.</div>
+</div>
+</div>
+<div class="des-item">
+
+<div class="des-body">
+<div class="des-name">Le Corbusier</div>
+<div class="des-field">Arhitektūra · Paris</div>
+<div class="des-note">Béton brut kā politisks apgalvojums. LC2: tērauda karkass ieskauj formu. Telpa kā sociāla mašīna.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════════════════════════════
+     § 07 — OBJEKTI
+     3 kolonnas, 4/3 attēlu proporcija
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ 07 — Objekti</span>
+<span class="sec-n">Rīki · Mehānismi · Instrumenti</span>
+</div>
+<div class="sec-intro">Objekts nav dekorācija. Tas ir instruments ar precīzu funkciju. Forma izaug no problēmas.</div>
+<div class="obj-grid">
+<div class="obj-item">
+
+<div class="obj-body">
+<span class="obj-cat">Pulkstenis · Hronogrāfs</span>
+<div class="obj-name">Heuer Monaco 1133B</div>
+<div class="obj-year">1969 · Jack Heuer</div>
+<div class="obj-desc">Pirmais kvadrātveida ūdensizturīgais hronogrāfs. Zils ciparnīca. McQueen Le Mans rokā.</div>
+</div>
+</div>
+<div class="obj-item">
+
+<div class="obj-body">
+<span class="obj-cat">Audio · Izlūkošana</span>
+<div class="obj-name">Nagra III</div>
+<div class="obj-year">1958 · Stefan Kudelski</div>
+<div class="obj-desc">Profesionāls portatīvais ierakstītājs. Izmantots izlūkdienestā un Nouvelle Vague. Mehāniskais smagums kā uzticamības garantija.</div>
+</div>
+</div>
+<div class="obj-item">
+
+<div class="obj-body">
+<span class="obj-cat">Televizors · Skulptūra</span>
+<div class="obj-name">Brionvega Algol 11</div>
+<div class="obj-year">1964 · Zanuso &amp; Sapper</div>
+<div class="obj-desc">Televizors kā skulptūra. Noapaļotais korpuss, integrētais statīvs. Tehnoloģija ietērpta estētiskā formā.</div>
+</div>
+</div>
+<div class="obj-item">
+
+<div class="obj-body">
+<span class="obj-cat">Radio · Rīks</span>
+<div class="obj-name">Braun T 1000</div>
+<div class="obj-year">1963 · Dieter Rams</div>
+<div class="obj-desc">Pasaules uztvērējs. Alumīnija korpuss. Katra poga ar vienu funkciju.</div>
+</div>
+</div>
+<div class="obj-item">
+
+<div class="obj-body">
+<span class="obj-cat">Pulkstenis · Ikona</span>
+<div class="obj-name">Rolex Submariner 5512</div>
+<div class="obj-year">1959 · Rolex SA</div>
+<div class="obj-desc">Rīks nirēšanai. 660 pēdu ūdensdrošs. Neviena dekoratīva elementa. Precizitāte bez demonstrācijas.</div>
+</div>
+</div>
+<div class="obj-item">
+
+<div class="obj-body">
+<span class="obj-cat">Mašīna · Dizains</span>
+<div class="obj-name">Olivetti Lettera 32</div>
+<div class="obj-year">1963 · Marcello Nizzoli</div>
+<div class="obj-desc">Rakstāmmašīna kā dizaina objekts. Tehnoloģija ietērpta estētiskā formā bez kompromisiem.</div>
+</div>
+</div>
+<!-- JAUNS OBJEKTS:
+    <div class="obj-item">
+      <img class="obj-img" src="JUSU_ATTELA_URL" alt="Nosaukums" onerror="this.style.background='#1a1a1a'">
+      <div class="obj-body">
+        <span class="obj-cat">KATEGORIJA</span>
+        <div class="obj-name">NOSAUKUMS</div>
+        <div class="obj-year">GADS · DIZAINERIS</div>
+        <div class="obj-desc">APRAKSTS</div>
+      </div>
+    </div>
+    -->
+</div>
+</section>
+<!-- ══════════════════════════════════════
+     § 08 — ARHITEKTŪRA
+     2 kolonnas, 16/9 attēlu proporcija
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ 08 — Arhitektūra</span>
+<span class="sec-n">Béton Brut · Brutālisms · 1950–1975</span>
+</div>
+<div class="arch-grid">
+<div class="arch-item">
+
+<div class="arch-body">
+<div class="arch-loc">New York · 1958</div>
+<div class="arch-name">Seagram Building</div>
+<div class="arch-by">Mies van der Rohe</div>
+<div class="arch-note">Tērauds un tints stikls kā pilnīga forma. Bronzas I-sijas — proporcionālais ritms. "Less is more" realizācija pilsētas telpā.</div>
+</div>
+</div>
+<div class="arch-item">
+
+<div class="arch-body">
+<div class="arch-loc">Marseille · 1952</div>
+<div class="arch-name">Unité d'Habitation</div>
+<div class="arch-by">Le Corbusier</div>
+<div class="arch-note">Betona sociālā mašīna. 337 dzīvokļi kā vienots organisms. Béton brut kā estētisks apgalvojums, ne trūkums.</div>
+</div>
+</div>
+<div class="arch-item">
+
+<div class="arch-body">
+<div class="arch-loc">Interjers · 1928</div>
+<div class="arch-name">LC2 / LC3 Krēsls</div>
+<div class="arch-by">Le Corbusier</div>
+<div class="arch-note">Tērauda karkass ieskauj formu kā būris. Mēbele diktē stāju. Nav relaksācijas — ir funkcija un pozīcija.</div>
+</div>
+</div>
+<div class="arch-item">
+
+<div class="arch-body">
+<div class="arch-loc">Interjers · 1962</div>
+<div class="arch-name">Arco Floor Lamp</div>
+<div class="arch-by">Achille Castiglioni</div>
+<div class="arch-note">Virzīta gaisma kā ķirurģisks instruments. Marmora bāze — fizisks svars kā enkurs. Forma izaug no problēmas: griesti bez vadiem.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════════════════════════════
+     MANIFESTO BANDA
+══════════════════════════════════════ -->
+<div class="manifesto">
+<div>
+<div class="mf-lbl">▸ Dizaina Kodekss</div>
+<div class="mf-title">Desmit Labā Dizaina Principi</div>
+</div>
+<div class="mf-rules">
+<div class="rule-line"><span class="rule-n">01</span><span class="rule-t">Dizains ir novatorisks — tehnoloģiskie sasniegumi rada jaunas iespējas.</span></div>
+<div class="rule-line"><span class="rule-n">02</span><span class="rule-t">Dizains padara produktu noderīgu — psiholoģiskie aspekti ir tikpat svarīgi.</span></div>
+<div class="rule-line"><span class="rule-n">03</span><span class="rule-t">Dizains ir estētisks — produkta skaistums ir tā lietderības daļa.</span></div>
+<div class="rule-line"><span class="rule-n">04</span><span class="rule-t">Dizains padara produktu saprotamu — tas komunicē savu struktūru.</span></div>
+<div class="rule-line"><span class="rule-n">07</span><span class="rule-t">Dizains ir ilgnoturīgs — tas nekad nav modīgs, tāpēc nekad nenoveco.</span></div>
+<div class="rule-line"><span class="rule-n">10</span><span class="rule-t">Weniger, aber besser. — Dieter Rams, Braun GmbH, 1963.</span></div>
+</div>
+</div>
+<!-- ══════════════════════════════════════
+     ATSAUCES
+     Lai pievienotu jaunu atsauci: kopējiet <tr> bloku
+══════════════════════════════════════ -->
+<section class="section">
+<div class="sec-hdr">
+<span class="sec-t">§ — Primārie Avoti</span>
+<span class="sec-n">Bibliografija · 1955–1975</span>
+</div>
+<table class="ref-table">
+<tr>
+<td>1928–</td>
+<td>
+<span class="ref-title">Domus Magazine</span>
+<span class="ref-meta">Milano · Red. Gio Ponti. Arhitektūra, dizains, māksla kā integrēta sistēma. 1965–1975: brutālisma un radikālā dizaina krustelis.</span><br/>
+<a class="ref-link" href="https://www.domusweb.it" target="_blank">domusweb.it →</a>
+</td>
+</tr>
+<tr>
+<td>1967–</td>
+<td>
+<span class="ref-title">L'Uomo Vogue</span>
+<span class="ref-meta">Milano · Pirmais vīriešu modes žurnāls. Uzvalks kā sartoriālā arhitektūra.</span><br/>
+<a class="ref-link" href="https://www.vogue.it/uomo" target="_blank">vogue.it/uomo →</a>
+</td>
+</tr>
+<tr>
+<td>1955–</td>
+<td>
+<span class="ref-title">Braun Design Archive</span>
+<span class="ref-meta">Frankfurt am Main · Dieter Rams pilnais katalogs. Funkcionalitātes filozofija materiālā formā.</span><br/>
+<a class="ref-link" href="https://www.braun.com/en/heritage.html" target="_blank">braun.com/heritage →</a>
+</td>
+</tr>
+<tr>
+<td>1968–</td>
+<td>
+<span class="ref-title">Provoke Magazine</span>
+<span class="ref-meta">Tokija · Moriyama, Nakahira. Are, bure, bokeh — troksnis kā metode. 3 numuri, 1968–1969.</span><br/>
+<a class="ref-link" href="https://www.moma.org" target="_blank">moma.org →</a>
+</td>
+</tr>
+<tr>
+<td>1956–</td>
+<td>
+<span class="ref-title">Bauhausarchiv Berlin</span>
+<span class="ref-meta">Berlin · Mies, Gropius, Moholy-Nagy. Industriālā formas valoda kā akadēmiska sistēma.</span><br/>
+<a class="ref-link" href="https://www.bauhaus.de" target="_blank">bauhaus.de →</a>
+</td>
+</tr>
+<tr>
+<td>1948–</td>
+<td>
+<span class="ref-title">Cinémathèque française</span>
+<span class="ref-meta">Paris · Melville, Godard, Truffaut arhīvs. Kadra analīze, kostīmu dokumentācija.</span><br/>
+<a class="ref-link" href="https://www.cinematheque.fr" target="_blank">cinematheque.fr →</a>
+</td>
+</tr>
+</table>
+</section>
+<footer class="footer">
+<span class="footer-sig">FORMA.ARCHIV  ·  Operationelle Ästhetik  ·  Est. MCMLXVIII</span>
+<span class="footer-rule">Weniger, aber besser. — D. Rams</span>
+</footer>
+</div>
+</body>
+</html>
